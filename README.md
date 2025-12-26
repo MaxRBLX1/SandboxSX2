@@ -79,3 +79,6 @@ MIT License — free to use, modify, and share.
 - Download the latest APK from https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.3
 - Place your BIOS files in /Android/data/com.example.sandboxsx2/bios/
 - Launch SandboxSX2 and press Init Core
+  
+## 🌌 Join the Community
+Come hang out with us on Discord: [Join SandboxSX2] https://discord.gg/Purda4EX
