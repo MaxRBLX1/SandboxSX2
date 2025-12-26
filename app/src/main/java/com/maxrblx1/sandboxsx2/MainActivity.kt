@@ -17,9 +17,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Initialize core once at startup
-        NativeEmulator.initCore()
-
         // Auto-create BIOS folders
         createBiosFolders()
 
@@ -51,12 +48,12 @@ class MainActivity : ComponentActivity() {
         val root = File(getExternalFilesDir(null), "SandboxSX2")
         val extensions = mapOf(
             ".bin" to "ROM",
-            ".erom" to "EROM",
-            ".mec" to "MEC",
-            ".nvm" to "NVM",
             ".rom" to "ROM",
             ".rom1" to "ROM1",
-            ".rom2" to "ROM2"
+            ".rom2" to "ROM2",
+            ".erom" to "EROM",
+            ".nvm" to "NVM",
+            ".mec" to "MEC"
         )
 
         var count = 0
@@ -98,12 +95,19 @@ class MainActivity : ComponentActivity() {
 
     private fun getBiosStatus(): Map<String, Boolean> {
         val root = File(getExternalFilesDir(null), "SandboxSX2")
-        val parts = listOf("ROM", "ROM1", "ROM2", "EROM", "NVM", "MEC")
+        val parts = mapOf(
+            "ROM" to listOf(".bin", ".rom"),
+            "ROM1" to listOf(".rom1"),
+            "ROM2" to listOf(".rom2"),
+            "EROM" to listOf(".erom"),
+            "NVM" to listOf(".nvm"),
+            "MEC" to listOf(".mec")
+        )
 
         val status = mutableMapOf<String, Boolean>()
-        parts.forEach { part ->
+        parts.forEach { (part, exts) ->
             val found = root.walkTopDown().any { file ->
-                file.isFile && file.name.lowercase().endsWith(part.lowercase())
+                file.isFile && exts.any { ext -> file.name.lowercase().endsWith(ext) }
             }
             status[part] = found
         }
@@ -113,7 +117,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun EmulatorScreen(onRescanBios: () -> Int, getBiosStatus: () -> Map<String, Boolean>) {
-    var debugText by remember { mutableStateOf("SandboxSX2 v0.2\nReady to debug...") }
+    var debugText by remember { mutableStateOf("SandboxSX2 v0.3\nReady to debug...") }
     var showBiosStatus by remember { mutableStateOf(false) }
     val scrollState = rememberScrollState()
 
@@ -123,8 +127,13 @@ fun EmulatorScreen(onRescanBios: () -> Int, getBiosStatus: () -> Map<String, Boo
             .verticalScroll(scrollState)
     ) {
         Button(onClick = {
-            NativeEmulator.initCore()
-            debugText = "Core initialized."
+            val detected = onRescanBios()
+            if (detected > 0) {
+                NativeEmulator.initCore()
+                debugText = "Core initialized. Detected $detected BIOS file(s)."
+            } else {
+                debugText = "Core initialization failed — ROM not found."
+            }
         }) {
             Text("Init Core")
         }
@@ -148,7 +157,7 @@ fun EmulatorScreen(onRescanBios: () -> Int, getBiosStatus: () -> Map<String, Boo
                 NativeEmulator.step()
                 debugText = NativeEmulator.getDebugState()
             } else {
-                debugText = "Debug not ready — load BIOS first."
+                debugText = "Debug not ready — initialize core and load BIOS first."
             }
         }) {
             Text("Step CPU")
@@ -157,10 +166,12 @@ fun EmulatorScreen(onRescanBios: () -> Int, getBiosStatus: () -> Map<String, Boo
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(onClick = {
-            debugText = if (NativeEmulator.isDebugReady()) {
+            val status = getBiosStatus()
+            val romReady = status["ROM"] == true
+            debugText = if (NativeEmulator.isDebugReady() && romReady) {
                 "✅ Emulator is ready for debugging."
             } else {
-                "❌ Emulator not ready yet."
+                "❌ Emulator not ready — ROM missing or core not initialized."
             }
         }) {
             Text("Check Debug Ready")
@@ -203,6 +214,15 @@ fun EmulatorScreen(onRescanBios: () -> Int, getBiosStatus: () -> Map<String, Boo
                     "Other BIOS parts (ROM1, ROM2, EROM, NVM, MEC) are optional, " +
                     "but missing files may cause reduced compatibility or features. " +
                     "If the emulator halts, please check your BIOS setup.",
+            style = MaterialTheme.typography.bodyMedium
+        )
+
+        Spacer(modifier = Modifier.height(12.dp))
+
+        // 💡 Helpful tip for v0.3
+        Text(
+            "💡 Tip: After adding or reloading BIOS files, always tap Init Core. " +
+                    "This refreshes the emulator state so the BIOS is recognized and memory map is ready.",
             style = MaterialTheme.typography.bodyMedium
         )
     }
