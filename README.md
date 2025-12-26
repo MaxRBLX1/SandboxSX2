@@ -81,4 +81,4 @@ MIT License — free to use, modify, and share.
 - Launch SandboxSX2 and press Init Core
   
 ## 🌌 Join the Community
-Come hang out with us on Discord: [Join SandboxSX2] https://discord.gg/Purda4EX
+Join SandboxSX2 Community on Discord: [Join SandboxSX2] https://discord.gg/Purda4EX
