@@ -31,20 +31,16 @@ SandboxSX2 treats safety as a core architectural goal, not an optional feature.
 - No hidden network activity
 SandboxSX2 will not brick devices, spy on users, or silently push hardware beyond safe limits.
 
-## ✨ Features (v0.3)
-- Real instruction decoder (halts safely on unknown instructions).
-- BIOS loader with auto‑created folders for ROM, ROM1, ROM2, EROM, NVM, MEC.
-- JNI bridge between Kotlin and native C++.
-- Debug panel showing PC, cycles, decoded instruction, registers, BIOS sizes, and memory map.
-- Memory map implemented:
-- EE RAM (32 MB)
-- Scratchpad RAM (16 KB)
-- IOP RAM (8 MB)
-- Safe load/store helpers (load32, store32) with bounds checking and misalignment detection.
-- Instruction expansion: NOP, LW, SW.
-- Scrollable UI with buttons for Init Core, Refresh Debug Info, Step CPU, Check Debug Ready, Rescan BIOS.
-- BIOS status toggle with ✅ / ❌ indicators.
-- Friendly warning message explaining required vs optional BIOS parts.
+## 🚀 SandboxSX2 v0.4 Features
+- GS/IOP/SPU2 stubs integrated
+- Each subsystem now has a placeholder with safe linkage.
+- Debug panel reports their status (IOP=OK, GS=STUB, SPU2=STUB).
+- BIOS boot flow stabilized
+- BIOS regions (ROM, ROM1, ROM2, EROM, NVM) mapped cleanly.
+- Safe boot sequence with “Ready” status flag.
+- Instruction stepping expanded
+- Cycle counter and PC reporting improved.
+- Decoding shows opcode + human‑readable form (e.g., SLL $0, $0, 0).
 
 ## 📂 Project Structure
 - app/ → Android front‑end (Jetpack Compose UI)
@@ -66,7 +62,7 @@ SandboxSX2 will not brick devices, spy on users, or silently push hardware beyon
 - v0.1 → EE CPU skeleton ✅
 - v0.2 → Instruction decoder + BIOS loader ✅
 - v0.3 → Memory map (RAM, scratchpad, IOP) ✅
-- v0.4 → GS / IOP / SPU2 stubs
+- v0.4 → GS / IOP / SPU2 stubs ✅
 - v0.5 → Full VM loop
 
 ## 👤 About the Developer
@@ -76,7 +72,7 @@ SandboxSX2 is built entirely by MaxRBLX1 — a solo developer focused on ethical
 MIT License — free to use, modify, and share.
 
 ## 📥 Installation
-- Download the latest APK from https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.3
+- Download the latest APK from https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.4
 - Place your BIOS files in /Android/data/com.example.sandboxsx2/bios/
 - Launch SandboxSX2 and press Init Core
   
