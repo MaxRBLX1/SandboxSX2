@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SandboxSX2 — Android PS2 Emulator</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#0d0d0d; color:#f0f0f0; }
+    header { background: linear-gradient(90deg,#3a0ca3,#7209b7); padding:2rem; text-align:center; }
+    header h1 { margin:0; font-size:2.5rem; }
+    header p { font-size:1.2rem; margin-top:0.5rem; }
+    section { padding:2rem; max-width:900px; margin:auto; }
+    h2 { color:#f72585; }
+    ul { text-align:left; max-width:700px; margin:auto; }
+    .btn { display:inline-block; margin:0.5rem; padding:0.8rem 1.5rem; background:#f72585; color:#fff; text-decoration:none; border-radius:5px; }
+    .btn:hover { background:#ff4d6d; }
+    footer { background:#111; padding:1rem; text-align:center; font-size:0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SandboxSX2</h1>
+    <p>A modular, privacy‑first PlayStation 2 emulator for Android</p>
+    <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.4" class="btn">Download v0.4</a>
+    <a href="https://discord.gg/Purda4EX" class="btn">Join Discord</a>
+  </header>
+
+  <section>
+    <h2>🌍 Vision: Universal Access</h2>
+    <p>Most emulators prioritize Snapdragon flagships, leaving millions of players excluded. SandboxSX2 takes a different path — one built on accessibility, safety, and respect for device limits.</p>
+    <ul>
+      <li><b>Universal Processor Support</b> → Works on any ARM or x86 CPU, without chipset lock‑ins.</li>
+      <li><b>Inclusive Design</b> → Runs on Android 6.0+, including Android Go Edition.</li>
+      <li><b>Safety & Stability</b> → Sandboxed execution model avoids unsafe native execution and overheating.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🔒 Why SandboxSX2 Is Safe</h2>
+    <ul>
+      <li>Sandboxed Core Execution → Controlled sandbox limits system access.</li>
+      <li>Predictable Resource Usage → No unsafe JIT tricks, no forced overclocks.</li>
+      <li>Thermal & Battery Friendly → Stable operation reduces overheating and battery stress.</li>
+      <li>No System Modification → No root, no kernel changes, runs entirely in user space.</li>
+      <li>Privacy‑First → No ads, trackers, or hidden network activity.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🚀 SandboxSX2 v0.4 Features</h2>
+    <ul>
+      <li>GS/IOP/SPU2 stubs integrated with safe linkage.</li>
+      <li>Debug panel reports subsystem status.</li>
+      <li>BIOS boot flow stabilized with clean mapping.</li>
+      <li>Instruction stepping expanded with opcode decoding.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📂 Project Structure</h2>
+    <ul>
+      <li>app/ → Android front‑end (Jetpack Compose UI)</li>
+      <li>jni/ → Native C++ core</li>
+      <li>bios/ → User BIOS files</li>
+      <li>README.md → Project overview</li>
+      <li>index.html → SandboxSX2 landing page</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>⚠️ BIOS Requirements</h2>
+    <p>ROM → Required for the emulator to run<br>
+       ROM1, ROM2, EROM, NVM, MEC → Optional (missing files reduce compatibility but won’t prevent execution)</p>
+  </section>
+
+  <section>
+    <h2>📱 System Requirements</h2>
+    <p>Android → 6.0+ (including Android Go Edition)<br>
+       Processor → Universal ARM/x86 support<br>
+       RAM → 2 GB minimum, up to 16 GB supported</p>
+  </section>
+
+  <section>
+    <h2>🚀 Roadmap</h2>
+    <p>v0.1 → EE CPU skeleton ✅<br>
+       v0.2 → Instruction decoder + BIOS loader ✅<br>
+       v0.3 → Memory map ✅<br>
+       v0.4 → GS / IOP / SPU2 stubs ✅<br>
+       v0.5 → Full VM loop</p>
+  </section>
+
+  <section>
+    <h2>👤 About the Developer</h2>
+    <p>SandboxSX2 is built entirely by <b>MaxRBLX1</b> — a solo developer focused on ethical emulation, low‑end accessibility, and transparent engineering.</p>
+  </section>
+
+  <section>
+    <h2>📜 License</h2>
+    <p>MIT License — free to use, modify, and share.</p>
+  </section>
+
+  <section>
+    <h2>📥 Installation</h2>
+    <p>Download the latest APK → <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.4">GitHub Releases</a><br>
+       Place BIOS files in <code>/Android/data/com.example.sandboxsx2/bios/</code><br>
+       Launch SandboxSX2 and press <b>Init Core</b></p>
+  </section>
+
+  <footer>
+    🌌 Join the SandboxSX2 Community → <a href="https://discord.gg/Purda4EX">Discord</a><br>
+    © 2025 SandboxSX2 Project · Built by MaxRBLX1
+  </footer>
+</body>
+</html>
