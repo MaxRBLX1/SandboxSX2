@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SandboxSX2 🛡️🎮
 
 **SandboxSX2** is a revolutionary, sandboxed PlayStation 2 emulator designed for Android. It prioritizes safety, universal compatibility, and performance on budget-friendly devices.
