@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "SandboxSX2"
 include(":app")
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946

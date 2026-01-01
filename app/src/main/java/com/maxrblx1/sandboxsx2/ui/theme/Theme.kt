@@ -1,6 +1,9 @@
 package com.maxrblx1.sandboxsx2.ui.theme
 
+<<<<<<< HEAD
 import android.app.Activity
+=======
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

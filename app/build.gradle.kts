@@ -10,6 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.maxrblx1.sandboxsx2"
+<<<<<<< HEAD
         minSdk = 23
         targetSdk = 36
         versionCode = 5
@@ -31,6 +32,24 @@ android {
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")
+=======
+        minSdk = 23   // covers Android Go Edition and older devices
+        targetSdk = 36
+        versionCode = 2
+        versionName = "0.2"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags += ""   // keep empty for portability
+            }
+        }
+
+        ndk {
+            // Build for all common ABIs so the .so works everywhere
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946
         }
     }
 
@@ -56,8 +75,18 @@ android {
     buildFeatures {
         compose = true
     }
+<<<<<<< HEAD
 }
 
+=======
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+        }
+    }
+}
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -76,4 +105,8 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946

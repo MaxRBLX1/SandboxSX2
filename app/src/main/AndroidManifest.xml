@@ -6,7 +6,11 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
+<<<<<<< HEAD
         android:icon="@mipmap/ic_launcher_playstore"
+=======
+        android:icon="@mipmap/ic_launcher_round"
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -15,7 +19,12 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+<<<<<<< HEAD
             android:theme="@style/Theme.SandboxSX2">
+=======
+            android:theme="@style/Theme.SandboxSX2"
+            tools:ignore="RedundantLabel">
+>>>>>>> 98c30722c5cc4b68755cfb441b2bedf3dede0946
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
