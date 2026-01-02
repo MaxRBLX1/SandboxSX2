@@ -183,12 +183,13 @@ MIT License — free to use, modify, and distribute.
 
 ## 📥 Installation
 
-1. Download the latest APK from the Releases page  
+1. https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5  
 2. Place BIOS files in:  
    ```
    /Android/data/com.example.sandboxsx2/bios/
    ```
 3. Launch SandboxSX2 and press **Init Core**
+4. Watch the full VM loop in Action
 
 ---
 
