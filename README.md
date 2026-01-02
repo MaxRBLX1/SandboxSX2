@@ -150,7 +150,22 @@ SandboxSX2 is built step by step:
 - v0.2 → Instruction decoder + BIOS loader ✅  
 - v0.3 → Memory map (RAM, scratchpad, IOP) ✅  
 - v0.4 → GS / IOP / SPU2 stubs ✅  
-- **v0.5 → Full VM execution loop (first real emulation milestone)**
+- v0.5 → Full VM execution loop (first real emulation milestone) ✅ 
+- v0.6 → Instruction Semantics
+- v0.7 → Interrupts, Timers & DMA Refinement
+- v0.8 → Graphics Synthesizer (GS) Rendering Prototype
+- v0.9 → SPU2 Audio + IOP Expansion
+- v1.0 → Public Beta Release (Playable)
+
+---
+
+🎯 The Big Picture
+- Interpreter only (v0.5) → BIOS executes, but slow
+- JIT + GPU GS renderer (v0.8–v1.0) → Games boot and run at playable speed, even on low‑end devices
+- Optimized audio + DMA sync (v0.9–v1.0) → Smooth experience without stutter
+
+⚡ So yes: v1.0 is your first truly playable release. It won’t be perfect or full‑speed for every game, but it will mark the transition from “testing BIOS” → “playing PS2 titles.”
+Do you want me to sketch a compatibility test suite (like a list of 5–10 PS2 games across genres) that you can use to prove v1.0 is playable when you release it?
 
 ---
 
