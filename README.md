@@ -196,5 +196,5 @@ MIT License — free to use, modify, and distribute.
 ## 🌌 Community
 
 Join the SandboxSX2 community on Discord:  
-https://discord.gg/Purda4EX
+https://discord.gg/YbWFtKM4
 
