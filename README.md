@@ -132,6 +132,15 @@ SandboxSX2 will not brick devices, spy on users, or silently push hardware beyon
 - **Android:** 6.0+ (including Android Go Edition)  
 - **CPU:** Universal support — ARM or x86  
 - **RAM:** 2 GB minimum (up to 16 GB supported)
+  
+---
+
+
+## 🎯 The Big Picture  
+SandboxSX2 is built step by step:  
+- Interpreter only → BIOS executes, but slow  
+- JIT + GPU GS renderer → Games boot and run at playable speed, even on low‑end devices  
+- Optimized audio + DMA sync → Smooth experience without stutter
 
 ---
 
