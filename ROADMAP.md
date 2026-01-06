@@ -80,7 +80,7 @@ This roadmap outlines the major milestones in development.
 - Refine hardware timers for accurate scheduling
 - DMA channel refinement for stable data transfers
 
-### v0.8 → Graphics Synthesizer (GS) Rendering Prototype
+### v0.8 → Graphics Synthesizer (GS) Rendering Prototype with Hybrid JIT to render it
 - Begin GS rendering pipeline
 - Implement basic frame buffer output
 - Debug overlay for GPU events
