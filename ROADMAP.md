@@ -29,7 +29,7 @@ SandboxSX2 is a safe, universal PlayStation 2 emulator for Android — designed 
 - BIOS boot with live debug overlay
 - Demonstrated stability even on ultra‑low‑end specs
 
-### v0.6 → Instruction Semantics (100% DONE)
+### v0.6 → Instruction Semantics
 - **Core Arithmetic & Logic**: Implemented ADD, SUB, MULT, DIV, Logical ops, and Shifts (SLL, SRL, SRA).
 - **Control Flow**: Implemented Branch and Jump instructions with delay slot handling.
 - **Memory Access**: Added Load/Store for word, halfword, and byte, plus **Unaligned (LWL/LWR/SWL/SWR)** and Scratchpad mapping.
