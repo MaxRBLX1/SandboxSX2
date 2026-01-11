@@ -153,7 +153,7 @@ SandboxSX2 is built step by step:
 - v0.5 → Full VM execution loop (first real emulation milestone) ✅ 
 - v0.6 → Instruction Semantics
 - v0.7 → Interrupts, Timers & DMA Refinement
-- v0.8 → Graphics Synthesizer (GS) Rendering Prototype
+- v0.8 → Hybrid JIT + Graphics Synthesizer (GS) Rendering Prototype
 - v0.9 → SPU2 Audio + IOP Expansion
 - v1.0 → Public Beta Release (Playable)
 
