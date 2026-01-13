@@ -21,7 +21,7 @@
   <header>
     <h1>SandboxSX2</h1>
     <p>A modular, privacy‑first PlayStation 2 emulator for Android</p>
-    <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.4" class="btn">Download v0.4</a>
+    <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5" class="btn">Download v0.5</a>
     <a href="https://discord.gg/Purda4EX" class="btn">Join Discord</a>
   </header>
 
@@ -47,12 +47,12 @@
   </section>
 
   <section>
-    <h2>🚀 SandboxSX2 v0.4 Features</h2>
+    <h2>🚀 SandboxSX2 v0.5 Features</h2>
     <ul>
-      <li>GS/IOP/SPU2 stubs integrated with safe linkage.</li>
-      <li>Debug panel reports subsystem status.</li>
-      <li>BIOS boot flow stabilized with clean mapping.</li>
-      <li>Instruction stepping expanded with opcode decoding.</li>
+      <li>Full VM loop achieved — BIOS boots stably with live debug overlay.</li>
+      <li>Compatible with ultra-low-end devices.</li>
+      <li>Prepares foundation for instruction semantics, audio, and GS rendering.</li>
+      <li>Debug panel reports subsystem status and memory mapping.</li>
     </ul>
   </section>
 
@@ -69,8 +69,10 @@
 
   <section>
     <h2>⚠️ BIOS Requirements</h2>
-    <p>ROM → Required for the emulator to run<br>
-       ROM1, ROM2, EROM, NVM, MEC → Optional (missing files reduce compatibility but won’t prevent execution)</p>
+    <p>
+      Only the <b>PS2 BIOS .bin file</b> is required to start the Full VM loop.<br>
+      Additional ROMs (ROM1, ROM2, EROM, NVM, MEC) are optional — missing files reduce compatibility but won’t prevent execution.
+    </p>
   </section>
 
   <section>
@@ -82,11 +84,18 @@
 
   <section>
     <h2>🚀 Roadmap</h2>
-    <p>v0.1 → EE CPU skeleton ✅<br>
-       v0.2 → Instruction decoder + BIOS loader ✅<br>
-       v0.3 → Memory map ✅<br>
-       v0.4 → GS / IOP / SPU2 stubs ✅<br>
-       v0.5 → Full VM loop</p>
+    <p>
+      v0.1 → EE CPU skeleton ✅<br>
+      v0.2 → Instruction decoder + BIOS loader ✅<br>
+      v0.3 → Memory map ✅<br>
+      v0.4 → GS / IOP / SPU2 stubs ✅<br>
+      v0.5 → Full VM loop ✅<br>
+      v0.6 → Instruction semantics (ADD, SUB, MULT, DIV, Branches, Memory Access…) 🚧<br>
+      v0.7 → Interrupts, Timers & DMA Refinement 🚧<br>
+      v0.8 → GS Rendering + Hybrid JIT 🌌<br>
+      v0.9 → SPU2 Audio + IOP Expansion 🌌<br>
+      v1.0 → Public Beta Release (Playable) 🌌
+    </p>
   </section>
 
   <section>
@@ -101,14 +110,17 @@
 
   <section>
     <h2>📥 Installation</h2>
-    <p>Download the latest APK → <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.4">GitHub Releases</a><br>
-       Place BIOS files in <code>/Android/data/com.example.sandboxsx2/bios/</code><br>
-       Launch SandboxSX2 and press <b>Init Core</b></p>
+    <p>
+      Download the latest APK → <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5">GitHub Releases</a><br>
+      <b>Important:</b> Open SandboxSX2 once before continuing to set up its directories.<br>
+      Place the <b>PS2 BIOS .bin file</b> in <code>/Android/data/com.maxrblx1.sandboxsx2/bios/</code><br>
+      Launch SandboxSX2 and press <b>Init Core</b>
+    </p>
   </section>
 
   <footer>
-    🌌 Join the SandboxSX2 Community → <a href="https://discord.gg/Purda4EX">Discord</a><br>
-    © 2025 SandboxSX2 Project · Built by MaxRBLX1
+    🌌 Join the SandboxSX2 Community → <a href="https://discord.gg/qv7cwecm">Discord</a><br>
+    © 2026 SandboxSX2 Project · Built by MaxRBLX1
   </footer>
 </body>
 </html>
