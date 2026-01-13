@@ -89,26 +89,6 @@ SandboxSX2 will not brick devices, spy on users, or silently push hardware beyon
 
 ----
 
-## 🚀 SandboxSX2 v0.4 Features
-
-> **Note:** SandboxSX2 is currently a **core foundation and BIOS loader**, not a full emulator yet.
-
-- GS / IOP / SPU2 stubs integrated  
-- Subsystem placeholders with safe linkage  
-- Debug panel reporting subsystem status  
-  - IOP = OK  
-  - GS = STUB  
-  - SPU2 = STUB  
-- BIOS boot flow stabilized  
-- BIOS regions mapped cleanly: ROM, ROM1, ROM2, EROM, NVM  
-- Safe boot sequence with “Ready” status flag  
-- Instruction stepping expanded  
-- Improved cycle counter and program counter reporting  
-- Opcode decoding with human-readable output  
-  - Example: `SLL $0, $0, 0`
-
----
-
 ## 📂 Project Structure
 
 - `app/` → Android frontend (Jetpack Compose UI)  
@@ -153,19 +133,9 @@ SandboxSX2 is built step by step:
 - v0.5 → Full VM execution loop (first real emulation milestone) ✅ 
 - v0.6 → Instruction Semantics
 - v0.7 → Interrupts, Timers & DMA Refinement
-- v0.8 → Hybrid JIT + Graphics Synthesizer (GS) Rendering Prototype
+- v0.8 → Hybrid JIT + Graphics Synthesizer (GS) Rendering
 - v0.9 → SPU2 Audio + IOP Expansion
 - v1.0 → Public Beta Release (Playable)
-
----
-
-🎯 The Big Picture
-- Interpreter only (v0.5) → BIOS executes, but slow
-- JIT + GPU GS renderer (v0.8–v1.0) → Games boot and run at playable speed, even on low‑end devices
-- Optimized audio + DMA sync (v0.9–v1.0) → Smooth experience without stutter
-
-⚡ So yes: v1.0 is your first truly playable release. It won’t be perfect or full‑speed for every game, but it will mark the transition from “testing BIOS” → “playing PS2 titles.”
-Do you want me to sketch a compatibility test suite (like a list of 5–10 PS2 games across genres) that you can use to prove v1.0 is playable when you release it?
 
 ---
 
@@ -196,5 +166,5 @@ MIT License — free to use, modify, and distribute.
 ## 🌌 Community
 
 Join the SandboxSX2 community on Discord:  
-https://discord.gg/YbWFtKM4
+https://discord.gg/qv7cwecm
 
