@@ -9,7 +9,7 @@ It follows a **"Universal First"** philosophy, optimized to run on **all devices
 
 Using a **100% sandboxed core**, SandboxSX2 delivers **stable emulation without compromising device safety, privacy, or thermal performance**.
 
-> ⚠️ **Note:** SandboxSX2 is currently a **BIOS loader and debugging platform**. Full PS2 game support will come in **v1.0 (Public Beta)**.
+⚠️ **Note:** SandboxSX2 is currently a **BIOS loader and debugging platform**. Full PS2 game support will come in **v1.0 (Public Beta)**.
 
 ---
 
