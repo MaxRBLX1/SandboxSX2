@@ -23,7 +23,7 @@ v0.7 is a **major milestone**, introducing the “Nervous System” of the emula
 - **Core Synchronization:** Precise 8:1 clock ratio between EE and IOP processors  
 - **Live Debug Overlay:** See PC, cycles, and GIF activity in real time  
 
-> v0.7 is **fully functional for BIOS boot and debugging**, but **games do not run yet**.
+v0.7 is **fully functional for BIOS boot and debugging**, but **games do not run yet**.
 
 ---
 
@@ -57,18 +57,18 @@ SandboxSX2 **requires official PlayStation 2 BIOS files** in `.bin` format. Thes
 - **Required:** `scphXXXX.bin` (Main BIOS)  
 - **Optional:** `rom1.bin`, `rom2.bin`, `erom.bin`, `nvm.bin`, `mec.bin`  
 
-> **How to copy BIOS files:**  
-> 1. Open **ZArchiver** or any file manager on your device.  
-> 2. Go to your **Downloads** folder.  
-> 3. Find the `.bin` BIOS file, then **hold/tap and copy** (depending on your file manager).  
-> 4. Navigate to:  
->    ```
->    Android/Data/com.maxrblx1.sandboxsx2/files/ps2_bios
->    ```  
-> 5. Paste the `.bin` file here.  
->
-> ⚠️ If you don’t have a BIOS file yet, you can download a free PS2 BIOS from the internet (make sure it is `.bin`).  
-> Missing optional files may reduce compatibility with some games but will **not prevent the emulator from running BIOS/debug**.
+ **How to copy BIOS files:**  
+ - 1. Open **ZArchiver** or any file manager on your device.  
+ - 2. Go to your **Downloads** folder.  
+ - 3. Find the `.bin` BIOS file, then **hold/tap and copy** (depending on your file manager).  
+ - 4. Navigate to:  
+     ```
+     Android/Data/com.maxrblx1.sandboxsx2/files/ps2_bios
+     ```  
+ - 5. Paste the `.bin` file here.  
+
+ - ⚠️ If you don’t have a BIOS file yet, you can download a free PS2 BIOS from the internet (make sure it is `.bin`).  
+   Missing optional files may reduce compatibility with some games but will **not prevent the emulator from running BIOS/debug**.
 
 ---
 
