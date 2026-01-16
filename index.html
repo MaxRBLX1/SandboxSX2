@@ -21,7 +21,7 @@
   <header>
     <h1>SandboxSX2</h1>
     <p>A modular, privacy‑first PlayStation 2 emulator for Android</p>
-    <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5" class="btn">Download v0.5</a>
+    <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5" class="btn">Download v0.7</a>
     <a href="https://discord.gg/Purda4EX" class="btn">Join Discord</a>
   </header>
 
@@ -47,14 +47,18 @@
   </section>
 
   <section>
-    <h2>🚀 SandboxSX2 v0.5 Features</h2>
+    <h2>🚀 SandboxSX2 v0.7 Features</h2>
     <ul>
-      <li>Full VM loop achieved — BIOS boots stably with live debug overlay.</li>
-      <li>Compatible with ultra-low-end devices.</li>
-      <li>Prepares foundation for instruction semantics, audio, and GS rendering.</li>
-      <li>Debug panel reports subsystem status and memory mapping.</li>
+      <li>Interrupt Framework (INTC) fully implemented — CPU can handle software-level interrupts.</li>
+      <li>Hardware Timers refined for accurate scheduling using clock dividers.</li>
+      <li>DMA subsystem upgraded — Source Chain mode and full DMAtag (CNT, NEXT, END) support.</li>
+      <li>EE and IOP cores synchronized with precise 8:1 clock ratio for stable timing.</li>
+      <li>Live debug overlay shows PC, cycles, GIF activity, and subsystem status.</li>
+      <li>Compatible with low-end devices while maintaining stability and safe resource usage.</li>
+      <li>Foundation laid for GS rendering and Hybrid JIT in v0.8.</li>
     </ul>
-  </section>
+</section>
+
 
   <section>
     <h2>📂 Project Structure</h2>
@@ -70,10 +74,12 @@
   <section>
     <h2>⚠️ BIOS Requirements</h2>
     <p>
-      Only the <b>PS2 BIOS .bin file</b> is required to start the Full VM loop.<br>
-      Additional ROMs (ROM1, ROM2, EROM, NVM, MEC) are optional — missing files reduce compatibility but won’t prevent execution.
+      To run SandboxSX2, you only need the <b>official PS2 BIOS .bin file</b> — this is enough to start the VM loop and see the live debug.<br>
+      Other files like <b>ROM1, ROM2, EROM, NVM, or MEC</b> are optional. If you don’t have them, the emulator will still work, but some games or features may not be fully compatible.<br>
+      <br>
+      <b>Tip:</b> Use a file manager (like ZArchiver) to copy your BIOS file into <code>Android/Data/com.maxrblx1.sandboxsx2/files/ps2_bios</code>.
     </p>
-  </section>
+</section>
 
   <section>
     <h2>📱 System Requirements</h2>
@@ -90,8 +96,8 @@
       v0.3 → Memory map ✅<br>
       v0.4 → GS / IOP / SPU2 stubs ✅<br>
       v0.5 → Full VM loop ✅<br>
-      v0.6 → Instruction semantics (ADD, SUB, MULT, DIV, Branches, Memory Access…) 🚧<br>
-      v0.7 → Interrupts, Timers & DMA Refinement 🚧<br>
+      v0.6 → Instruction semantics (ADD, SUB, MULT, DIV, Branches, Memory Access…) ✅<br>
+      v0.7 → Interrupts, Timers & DMA Refinement ✅<br>
       v0.8 → GS Rendering + Hybrid JIT 🌌<br>
       v0.9 → SPU2 Audio + IOP Expansion 🌌<br>
       v1.0 → Public Beta Release (Playable) 🌌
@@ -108,19 +114,27 @@
     <p>MIT License — free to use, modify, and share.</p>
   </section>
 
-  <section>
+ <section>
     <h2>📥 Installation</h2>
     <p>
-      Download the latest APK → <a href="https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5">GitHub Releases</a><br>
-      <b>Important:</b> Open SandboxSX2 once before continuing to set up its directories.<br>
-      Place the <b>PS2 BIOS .bin file</b> in <code>/Android/data/com.maxrblx1.sandboxsx2/bios/</code><br>
-      Launch SandboxSX2 and press <b>Init Core</b>
+      1. **Download** the latest APK from <a href="https://github.com/MaxRBLX1/SandboxSX2/releases">GitHub Releases</a>.<br>
+      2. **Install** the APK on your Android device (enable “Install from Unknown Sources” if needed).<br>
+      3. **Open SandboxSX2 once** to let it create the necessary folders.<br>
+      4. **Copy your PS2 BIOS .bin file**:  
+         - Use a file manager like **ZArchiver** (or any file manager you prefer).<br>
+         - Go to your **Downloads** folder, hold or tap your `.bin` file, and choose **Copy**.<br>
+         - Paste it into: <code>Android/Data/com.maxrblx1.sandboxsx2/files/ps2_bios</code>.<br>
+         - <i>If you don’t have a BIOS yet, you can download a free PS2 BIOS from the internet (official PS2 BIOS required for legal use).</i><br>
+      5. **Launch SandboxSX2**, tap <b>Setup BIOS</b>, then tap <b>Start Engine</b>.<br>
+      ⚠️ Reminder: v0.7 currently **only loads the BIOS and runs the VM with live debug**. Games are not playable yet — full gameplay will come in v1.0.
     </p>
-  </section>
+</section>
+
 
   <footer>
-    🌌 Join the SandboxSX2 Community → <a href="https://discord.gg/qv7cwecm">Discord</a><br>
+    🌌 Join the SandboxSX2 Community → <a href="https://discord.gg/jTDwZ4CR">Discord</a><br>
     © 2026 SandboxSX2 Project · Built by MaxRBLX1
   </footer>
 </body>
 </html>
+
