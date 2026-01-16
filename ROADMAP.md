@@ -1,7 +1,7 @@
 ## SandboxSX2 Roadmap
 ## SandboxSX2 is a safe, universal PlayStation 2 emulator for Android — designed to run across devices of all specs, from high‑end to ultra‑low‑end. This roadmap outlines the major milestones in development.
 ## ✅ Completed Milestones
-##v0.1 → EE CPU Skeleton
+## v0.1 → EE CPU Skeleton
 • Established emulator project structure
 • Stubbed EE CPU core
 • Defined modular architecture for future expansion
