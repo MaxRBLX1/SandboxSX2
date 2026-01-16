@@ -1,170 +1,130 @@
-<img width="512" height="512" alt="Untitled" src="https://github.com/user-attachments/assets/25b1f306-4b86-41c4-af1c-63e9934458f2" />
+<p align="center">
+  <img width="256" height="256" alt="SandboxSX2 Logo" src="https://github.com/user-attachments/assets/25b1f306-4b86-41c4-af1c-63e9934458f2" />
+</p>
 
+# 🎮 SandboxSX2
 
+**SandboxSX2** is a safe, universal **PlayStation 2 emulator for Android**, developed solo by **MaxRBLX1**.  
+It follows a **"Universal First"** philosophy, optimized to run on **all devices**—from flagship phones to ultra-low-end hardware like the Realme C11.  
 
+Using a **100% sandboxed core**, SandboxSX2 delivers **stable emulation without compromising device safety, privacy, or thermal performance**.
 
-
-## SandboxSX2
-
-**SandboxSX2** is a modular, privacy-first **PlayStation 2 emulator project for Android**. Built from the ground up by **MaxRBLX1**, it prioritizes **universal access, device safety, and transparent development** rather than chasing flagship-only performance numbers.
-
-SandboxSX2 is designed to run responsibly across a wide range of devices, including low-end and older hardware, without vendor lock-ins or unsafe optimizations.
-
----
-
-## 🌍 Vision: Universal Access
-
-Most modern emulators focus on Snapdragon flagships, leaving millions of users behind. SandboxSX2 follows a different philosophy — one centered on **accessibility, safety, and respect for device limitations**.
-
-- **Universal Processor Support**  
-  Targets all ARM and x86 CPUs, without chipset restrictions or vendor bias.
-
-- **Inclusive Design**  
-  Supports **Android 6.0+**, including **Android Go Edition**, ensuring older and low-end devices are not abandoned.
-
-- **Safety & Stability by Design**  
-  Uses a sandboxed execution model with controlled CPU and memory usage, avoiding unsafe native execution and aggressive optimizations that may overheat or damage devices.
-
-SandboxSX2 is not just an emulator — it is a **solo-built platform for nostalgia, creativity, and inclusion**, designed to run responsibly on every supported device.
+> ⚠️ **Note:** SandboxSX2 is currently a **BIOS loader and debugging platform**. Full PS2 game support will come in **v1.0 (Public Beta)**.
 
 ---
 
-## 🔒 Why SandboxSX2 Is Safe
+## 🚀 What’s New in v0.7
 
-Safety is a core architectural goal of SandboxSX2, not an afterthought.
+v0.7 is a **major milestone**, introducing the “Nervous System” of the emulator:
 
-- **Sandboxed Core Execution**  
-  Emulation logic runs inside a controlled sandbox, limiting system access and preventing uncontrolled native code execution.
+- **Interrupt Framework (INTC):** Full software-level handling for CPU interrupts  
+- **Hardware Timers:** Accurate scheduling using clock dividers for realistic VM speed  
+- **DMA Refinement:** Source Chain mode and full DMAtag (`CNT`, `NEXT`, `END`) support  
+- **Core Synchronization:** Precise 8:1 clock ratio between EE and IOP processors  
+- **Live Debug Overlay:** See PC, cycles, and GIF activity in real time  
 
-- **Predictable Resource Usage**  
-  No unsafe JIT tricks, no forced overclocks, and no background services. CPU and memory usage remain bounded and transparent, even on low-power devices.
-
-- **Thermal & Battery Friendly**  
-  Prioritizes stable operation over benchmark-driven performance, reducing overheating, throttling, and long-term battery stress.
-
-- **No System Modification**  
-  - No root required  
-  - No kernel, driver, or system file changes  
-  - Runs entirely in user space like a standard Android app
-
-- **Privacy-First & Transparent**  
-  - No ads  
-  - No trackers  
-  - No data collection  
-  - No hidden network activity  
-
-SandboxSX2 will not brick devices, spy on users, or silently push hardware beyond safe operating limits.
+> v0.7 is **fully functional for BIOS boot and debugging**, but **games do not run yet**.
 
 ---
 
-## ✨ SandboxSX2 v0.5 Features
+## 🌍 Mission: Emulation for Everyone
 
-- **Full VM Execution Loop**
-  - Implements the fetch → decode → execute → synchronize → repeat pipeline
-  - BIOS instructions now run continuously, advancing PC and cycles in real time
+SandboxSX2 is designed for **millions of users on budget devices**:
 
-- **BIOS Execution**
-  - Loads and executes Slim V12 BIOS successfully
-  - Program Counter (PC) progression visible in debug overlay
-
-- **Debug Overlay**
-  - Live reporting of EE state: ticks, cycles, and PC values
-  - Provides visibility into VM loop health and instruction flow
-
-- **GS + DMA Stubs**
-  - `Native_setGsReg` and `gsProcessGifPacket` implemented
-  - DMA highway simulated with safe linkage for future expansion
-
-- **Multi‑ABI Support**
-  - Clean builds for `arm64-v8a`, `armeabi-v7a`, `x86`, and `x86_64`
-  - Ensures compatibility across budget and flagship devices
-
-- **Kotlin Coroutine Driver**
-  - External tick loop control with pause/resume capability
-  - UI button (“Pause VM Loop”) wired to coroutine driver
-
-- **Safe Sandboxing**
-  - Runs entirely in user space, no root or system modifications
-  - Predictable resource usage, thermal‑friendly design
-
-----
-
-## 📂 Project Structure
-
-- `app/` → Android frontend (Jetpack Compose UI)  
-- `jni/` → Native C++ core  
-- `bios/` → User-provided BIOS files  
-- `README.md` → Project documentation  
-- `index.html` → SandboxSX2 landing page  
+- **Universal Compatibility:** Android 6.0+ (including Android Go), ARM and x86 CPUs  
+- **Safe by Design:** Runs entirely in a sandbox; no root, kernel hacks, or unsafe overclocks  
+- **Efficient & Ethical:** No ads, no trackers, optimized C++ code prevents overheating  
 
 ---
 
-## ⚠️ BIOS Requirements
+## ✨ Key Features (v0.7)
 
-- **ROM** → Required  
-- **ROM1, ROM2, EROM, NVM, MEC** → Optional  
-  - Missing files may reduce compatibility but will not prevent execution
+- **Stable VM Loop:** Continuous BIOS instruction execution for real-time debugging  
+- **Advanced Instruction Set:** Full v0.6 semantics including unaligned memory access, exceptions, and special registers  
+- **BIOS Loader:** Loads Slim V12 and other standard PS2 BIOS versions  
+- **Hardware Monitoring:** Debug overlay showing PC, cycles, and GIF activity  
+- **Multi-ABI Support:** Native binaries for `arm64-v8a`, `armeabi-v7a`, `x86`, and `x86_64`  
+- **Safe Control:** Instant pause/resume and reset functionality  
 
----
-
-## 📱 System Requirements
-
-- **Android:** 6.0+ (including Android Go Edition)  
-- **CPU:** Universal support — ARM or x86  
-- **RAM:** 2 GB minimum (up to 16 GB supported)
-  
----
-
-
-## 🎯 The Big Picture  
-SandboxSX2 is built step by step:  
-- Interpreter only → BIOS executes, but slow  
-- JIT + GPU GS renderer → Games boot and run at playable speed, even on low‑end devices  
-- Optimized audio + DMA sync → Smooth experience without stutter
+> ⚠️ Games are **not playable yet**. Only BIOS loading and VM debugging is currently functional.
 
 ---
 
-## 🛣 Roadmap
+## ⚠️ BIOS / .BIN Files Required
 
-- v0.1 → EE CPU skeleton ✅  
-- v0.2 → Instruction decoder + BIOS loader ✅  
-- v0.3 → Memory map (RAM, scratchpad, IOP) ✅  
-- v0.4 → GS / IOP / SPU2 stubs ✅  
-- v0.5 → Full VM execution loop (first real emulation milestone) ✅ 
-- v0.6 → Instruction Semantics
-- v0.7 → Interrupts, Timers & DMA Refinement
-- v0.8 → Hybrid JIT + Graphics Synthesizer (GS) Rendering
-- v0.9 → SPU2 Audio + IOP Expansion
-- v1.0 → Public Beta Release (Playable)
+SandboxSX2 **requires official PlayStation 2 BIOS files** in `.bin` format. These are **not included**.
 
----
+- **Required:** `scphXXXX.bin` (Main BIOS)  
+- **Optional:** `rom1.bin`, `rom2.bin`, `erom.bin`, `nvm.bin`, `mec.bin`  
 
-## 👤 About the Developer
-
-SandboxSX2 is developed entirely by **MaxRBLX1**, a solo developer focused on **ethical emulation**, **low-end accessibility**, and **transparent engineering**.
-
----
-
-## 📜 License
-
-MIT License — free to use, modify, and distribute.
+> **How to copy BIOS files:**  
+> 1. Open **ZArchiver** or any file manager on your device.  
+> 2. Go to your **Downloads** folder.  
+> 3. Find the `.bin` BIOS file, then **hold/tap and copy** (depending on your file manager).  
+> 4. Navigate to:  
+>    ```
+>    Android/Data/com.maxrblx1.sandboxsx2/files/ps2_bios
+>    ```  
+> 5. Paste the `.bin` file here.  
+>
+> ⚠️ If you don’t have a BIOS file yet, you can download a free PS2 BIOS from the internet (make sure it is `.bin`).  
+> Missing optional files may reduce compatibility with some games but will **not prevent the emulator from running BIOS/debug**.
 
 ---
 
-## 📥 Installation
+## 🎯 Roadmap
 
-1. https://github.com/MaxRBLX1/SandboxSX2/releases/tag/0.5  
-2. Place BIOS files in:  
-   ```
-   /Android/data/com.maxrblx1.sandboxsx2/bios/
-   ```
-3. Launch SandboxSX2 and press **Init Core**
-4. Watch the full VM loop in Action
+### ✅ Completed Milestones
+
+- **v0.1 → EE CPU Skeleton** – Project structure, stubbed EE core, modular architecture  
+- **v0.2 → Instruction Decoder + BIOS Loader** – Decoder framework, BIOS loader, verified boot parsing  
+- **v0.3 → Memory Map (RAM, Scratchpad, IOP)** – Defined regions, integrated IOP mapping, memory access validation  
+- **v0.4 → GS / IOP / SPU2 Stubs** – Stubbed Graphics Synthesizer, IOP, SPU2; hooks for audio/video  
+- **v0.5 → Full VM Loop** – Stable VM loop, BIOS boot, debug overlay, tested on low-end hardware  
+- **v0.6 → Instruction Semantics** – Arithmetic & Logic ops, Branch/Jump instructions, memory access, exceptions, HI/LO/COP0 handling  
+- **v0.7 → Interrupts, Timers & DMA Refinement (100% DONE)** – INTC handling, hardware timers, DMA Source Chain + DMAtag, 8:1 EE:IOP clock sync, live debug overlay  
+
+### 🚧 Current Milestone
+
+- **v0.8 → GS Rendering Prototype + Hybrid JIT**  
+  - Vulkan/GLES pipeline  
+  - Basic frame buffer output  
+  - Hybrid JIT for hot instruction blocks  
+  - GPU debug overlay  
+
+### 🌌 Future Milestones
+
+- **v0.9 → SPU2 Audio + IOP Expansion** – Audio playback integration, IOP subsystem expansion, audio sync  
+- **v1.0 → Public Beta Release (Playable)** – Playable PS2 titles on all supported Android devices, full Sandbox safety layer, community-driven features  
 
 ---
 
-## 🌌 Community
+## 📥 Getting Started
 
-Join the SandboxSX2 community on Discord:  
-https://discord.gg/CEZjTg3e
+1. **Download:** Get the latest APK from the [Releases Page](https://github.com/MaxRBLX1/SandboxSX2/releases)  
+2. **Install:** Enable “Install from Unknown Sources” on your Android device  
+3. **Setup BIOS:**  
+   - Install **ZArchiver** or any file manager  
+   - Copy your `.bin` BIOS files to:  
+     ```
+     Android/Data/com.maxrblx1.sandboxsx2/files/ps2_bios
+     ```  
+4. **Launch:** Tap **Setup BIOS**, then **Start Engine**  
+   - Only BIOS loading and VM debugging are available now; **game support will arrive in v1.0**  
 
+---
+
+## 📜 License & Credits
+
+- **Developer:** MaxRBLX1 (Solo Project)  
+- **License:** MIT License — Open, safe, and free  
+
+---
+
+## 🌐 Community
+
+- **Discord:** [Join the SandboxSX2 Community](https://discord.gg/jTDwZ4CR)  
+
+---
+
+**SandboxSX2 — BIOS loader and debugging platform today, full PS2 gameplay in v1.0.**
