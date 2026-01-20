@@ -37,16 +37,39 @@ SandboxSX2 is designed for **millions of users on budget devices**:
 
 ---
 
-## ✨ Key Features (v0.7)
+## **Key Features (v0.7)**
 
-- **Stable VM Loop:** Continuous BIOS instruction execution for real-time debugging  
-- **Advanced Instruction Set:** Full v0.6 semantics including unaligned memory access, exceptions, and special registers  
-- **BIOS Loader:** Loads Slim V12 and other standard PS2 BIOS versions  
-- **Hardware Monitoring:** Debug overlay showing PC, cycles, and GIF activity  
-- **Multi-ABI Support:** Native binaries for `arm64-v8a`, `armeabi-v7a`, `x86`, and `x86_64`  
-- **Safe Control:** Instant pause/resume and reset functionality  
+SandboxSX2 v0.7 introduces the emulator’s **core "nervous system"**, enabling accurate hardware emulation and advanced debugging:
 
-> ⚠️ Games are **not playable yet**. Only BIOS loading and VM debugging is currently functional.
+### **Sandboxed Core Architecture**
+- Fully isolated emulation of PS2 hardware from the host device.  
+- Ensures OS stability even on low-RAM devices.  
+- Prevents uncontrolled hardware access and privacy risks.  
+- Deterministic execution for reliable debugging and testing.
+
+### **Interrupt Framework (INTC)**
+- Emulates PS2 interrupt request handling with mask and prioritization logic.  
+- Interrupts delivered deterministically to the Emotion Engine (EE).  
+- Supports step-by-step tracing for debugging CPU behavior.
+
+### **Hardware Timers**
+- Accurate cycle-based emulation of PS2 hardware timers.  
+- Enables precise scheduling for DMA, audio, and future GPU operations.  
+- Facilitates synchronization testing and timing analysis.
+
+### **DMA Refinement**
+- Controlled transfers between CPU, memory, and subsystems.  
+- Synchronization-aware execution prevents race conditions.  
+- Optimized for stability on low-end devices.
+
+### **Core Synchronization**
+- Centralized VM loop synchronizes CPU, timers, and DMA subsystems.  
+- Stable execution with safe pause, resume, and reset functionality.  
+- Provides a consistent platform for debugging and hardware validation.
+
+### **Live Debug Overlay**
+- Real-time visualization of CPU execution, interrupts, timers, and DMA activity.  
+- Memory access and execution state inspection for developer analysis.  
 
 ---
 
