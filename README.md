@@ -13,6 +13,27 @@ Using a **100% sandboxed core**, SandboxSX2 delivers **stable emulation without 
 
 ---
 
+**SandboxSX2 is switching to simulated virtual PS2 hardware that can be adjusted.**
+
+Rendering PS2 games on low-end phones was very difficult. Traditional, real-hardware-style emulation caused crashes, black screens, and poor performance. To solve this, SandboxSX2 now uses a **simulated virtual real PS2 hardware approach**.
+
+### Benefits of the New Approach:
+
+- **Sandboxed Environment**  
+  Runs safely and stably without stressing the actual hardware.
+
+- **Universal BIOS Support**  
+  Adapts to any PS2 BIOS, so the emulator works regardless of the version.
+
+- **Higher FPS on Weak Devices**  
+  By simulating hardware instead of fully rendering PS2 graphics, performance is much smoother on low-end phones.
+
+### Summary
+
+This technique solves rendering issues on real phones while improving FPS and stability, making PS2 emulation accessible on a wider range of devices.
+
+---
+
 ## 🚀 What’s New in v0.7
 
 v0.7 is a **major milestone**, introducing the “Nervous System” of the emulator:
